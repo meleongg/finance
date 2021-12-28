@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    {% if shares %}
+        <h2>Sucessfully purchased {{ shares }} share(s) of {{ sym }} at {{ price | usd }}</h2>
+        <h2>Total Value of Purchase: {{ total | usd }}</h2>
+        <h2>Total Cash Left: {{ cash | usd }}</h2>
+    {% endif %}
+    {% if name %}
+        <h2>Name: {{ name }}</h2>
+        <h2>Ticker: {{ sym }}</h2>
+        <h2>Price: {{ price | usd }}</h2>
+    {% endif %}
+{% endblock %}

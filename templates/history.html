@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction</th>
+                <th>Ticker</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.TYPE }}</td>
+                <td>{{ transaction.ticker }}</td>
+                <td>{{ transaction.price }}</td>
+                <td>{{ transaction.shares }}</td>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.time_pst }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

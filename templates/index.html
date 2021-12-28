@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>Portfolio</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Market Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stock in stocks %}
+            <tr>
+                <td>{{ stock.ticker }}</td>
+                <td>{{ stock.price }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ stock.value }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2 class='bottomText'>Cash Remaining: {{ cash | usd }}</h2>
+    <h2>Total Portfolio Value: {{ total | usd }}</h2>
+{% endblock %}

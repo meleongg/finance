@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2 class='topText'>Add Cash</h2>
+    <h3 class='topText'>Account Balance: {{ cash | usd }}</h3>
+    <form action="/addCash" method="post">
+        <div class='form-group'>
+            <input class="form-control" name="amount" placeholder="Amount" type="number" min='1' max='1000000000000' required>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Cash</button>
+    </form>
+    {% if changed %}
+        <h2 class='bottomText'>Cash was successfully added!</h2>
+    {% endif %}
+{% endblock %}
